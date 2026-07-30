@@ -1,0 +1,131 @@
+/* Edexcel iGCSE CS Exam Trainer — exam-paper aesthetic */
+:root{
+  --teal:#007a87;        /* Pearson Edexcel teal */
+  --teal-dark:#005a64;
+  --ink:#1c2226;
+  --paper:#fbfaf7;       /* exam paper white */
+  --line:#d9d4c8;
+  --dotted:#b9b2a2;
+  --mint:#e3f4ef;
+  --examiner:#0b7a3b;    /* examiner green for mark schemes */
+  --examiner-bg:#eef8f0;
+  --wrong:#b3261e;
+  --wrong-bg:#fdecea;
+  --amber-bg:#fff7e0;
+  --mono:'SFMono-Regular',ui-monospace,'Cascadia Mono',Consolas,'Courier New',monospace;
+  --sans:-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);background:var(--paper);color:var(--ink);min-height:100vh;display:flex;flex-direction:column}
+
+/* top bar */
+.topbar{position:sticky;top:0;z-index:20;background:var(--teal);color:#fff;display:flex;align-items:center;gap:10px;padding:calc(env(safe-area-inset-top) + 10px) 14px 10px}
+.back-btn{background:rgba(255,255,255,.15);border:0;color:#fff;font-size:20px;width:36px;height:36px;border-radius:8px;cursor:pointer;flex:0 0 auto}
+.brand{display:flex;flex-direction:column;line-height:1.15;min-width:0}
+.brand-mark{font-size:11px;letter-spacing:.14em;opacity:.85;font-weight:700}
+.brand-title{font-weight:700;font-size:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.score-pill{margin-left:auto;background:#fff;color:var(--teal-dark);font-weight:700;font-size:13px;padding:5px 11px;border-radius:999px;flex:0 0 auto}
+
+.view{flex:1;width:100%;max-width:760px;margin:0 auto;padding:16px 14px calc(84px + env(safe-area-inset-bottom))}
+
+/* bottom tabs */
+.tabbar{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--line);display:flex;z-index:20;padding-bottom:env(safe-area-inset-bottom)}
+.tab{flex:1;background:none;border:0;padding:12px 4px;font-size:13px;font-weight:600;color:#7a756a;cursor:pointer}
+.tab.active{color:var(--teal)}
+
+/* topic list */
+.topic-card{background:#fff;border:1px solid var(--line);border-radius:12px;margin-bottom:12px;overflow:hidden}
+.topic-head{display:flex;align-items:baseline;gap:10px;padding:13px 14px;background:linear-gradient(0deg,#fff,var(--mint));border-bottom:1px solid var(--line)}
+.topic-num{font-family:var(--mono);font-weight:700;color:var(--teal);font-size:13px}
+.topic-name{font-weight:700;font-size:15px}
+.section-row{display:flex;align-items:center;gap:10px;width:100%;text-align:left;background:none;border:0;border-top:1px solid #efece4;padding:12px 14px;font-size:14px;cursor:pointer;color:var(--ink)}
+.section-row:first-of-type{border-top:0}
+.section-row[disabled]{opacity:.45;cursor:default}
+.sec-num{font-family:var(--mono);font-size:12px;color:#8a8477;flex:0 0 34px}
+.sec-name{flex:1}
+.sec-count{font-size:11px;color:var(--teal);font-weight:700;background:var(--mint);padding:3px 8px;border-radius:999px}
+.sec-soon{font-size:11px;color:#9a9488}
+
+/* section hub */
+.hub-title{font-size:20px;font-weight:800;margin:6px 0 2px}
+.hub-sub{color:#6f6a5e;font-size:13px;margin-bottom:16px}
+.hub-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.hub-btn{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 14px;text-align:left;cursor:pointer;font-family:inherit}
+.hub-btn h3{font-size:15px;margin-bottom:4px;color:var(--teal-dark)}
+.hub-btn p{font-size:12px;color:#6f6a5e;line-height:1.4}
+.hub-btn.wide{grid-column:1/-1}
+.hub-progress{font-size:11px;color:var(--examiner);font-weight:700;margin-top:8px;display:block}
+
+/* notes */
+.note-group{background:#fff;border:1px solid var(--line);border-radius:12px;margin-bottom:14px;padding:14px}
+.note-group h3{font-size:15px;color:var(--teal-dark);margin-bottom:8px;padding-bottom:6px;border-bottom:2px solid var(--mint)}
+.note-group li{margin:0 0 7px 18px;font-size:14px;line-height:1.5}
+.note-group b{color:var(--teal-dark)}
+.note-group code{font-family:var(--mono);font-size:12.5px;background:var(--mint);padding:1px 5px;border-radius:4px}
+.memory-hook{background:var(--amber-bg);border-left:3px solid #d9a400;padding:8px 10px;border-radius:0 8px 8px 0;font-size:13px;margin-top:8px}
+
+/* quiz setup + question paper styling */
+.setup-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:12px}
+.setup-card h3{font-size:15px;margin-bottom:10px}
+.chip-row{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 14px;font-size:13px;font-weight:600;cursor:pointer;color:var(--ink)}
+.chip.sel{background:var(--teal);border-color:var(--teal);color:#fff}
+.start-btn,.primary-btn{width:100%;background:var(--teal);color:#fff;border:0;border-radius:10px;padding:14px;font-size:15px;font-weight:700;cursor:pointer;margin-top:8px}
+.ghost-btn{width:100%;background:none;border:1px solid var(--line);border-radius:10px;padding:12px;font-size:14px;font-weight:600;cursor:pointer;margin-top:8px;color:var(--ink)}
+
+.qpaper{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 16px 18px;position:relative}
+.qmeta{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-size:12px;color:#7a756a}
+.qtag{font-weight:700;color:var(--teal);letter-spacing:.05em}
+.qtext{font-size:15px;line-height:1.55;white-space:pre-wrap}
+.qmarks{display:block;text-align:right;font-weight:700;font-size:14px;margin-top:6px}
+pre.codeblock{font-family:var(--mono);font-size:13px;line-height:1.55;background:#f4f7f7;border:1px solid #dfe7e7;border-left:3px solid var(--teal);border-radius:6px;padding:10px 12px;margin:10px 0;overflow-x:auto;white-space:pre}
+.flowwrap{margin:10px 0;text-align:center;overflow-x:auto}
+
+.opt{display:flex;gap:10px;align-items:flex-start;width:100%;text-align:left;background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px;margin-top:8px;font-size:14px;cursor:pointer;font-family:inherit;line-height:1.4}
+.opt .letter{font-weight:800;color:var(--teal);font-family:var(--mono)}
+.opt.correct{background:var(--examiner-bg);border-color:var(--examiner)}
+.opt.incorrect{background:var(--wrong-bg);border-color:var(--wrong)}
+.opt:disabled{cursor:default;color:var(--ink)}
+
+.answer-lines{margin-top:12px}
+.answer-lines .dot{border-bottom:1.5px dotted var(--dotted);height:26px}
+textarea.attempt{width:100%;min-height:84px;border:1px solid var(--line);border-radius:8px;padding:10px;font-family:inherit;font-size:14px;margin-top:10px;background:#fffdf8}
+
+.ms{margin-top:14px;background:var(--examiner-bg);border:1px solid #bfe3c8;border-radius:10px;padding:12px}
+.ms h4{color:var(--examiner);font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
+.ms .mstext{font-size:14px;line-height:1.55;white-space:pre-wrap}
+.ms pre.codeblock{background:#fff}
+.selfmark{display:flex;gap:8px;margin-top:12px}
+.selfmark button{flex:1;border-radius:10px;border:1px solid var(--line);padding:12px;font-weight:700;font-size:14px;cursor:pointer;background:#fff}
+.selfmark .yes{color:var(--examiner);border-color:var(--examiner)}
+.selfmark .no{color:var(--wrong);border-color:var(--wrong)}
+.reveal-btn{margin-top:12px}
+
+.qnav{display:flex;gap:8px;margin-top:14px}
+.qnav button{flex:1;border-radius:10px;padding:13px;font-weight:700;font-size:14px;cursor:pointer;border:0}
+.qnav .next{background:var(--teal);color:#fff}
+.qnav .skip{background:#fff;border:1px solid var(--line);color:var(--ink)}
+
+/* results + progress */
+.result-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px;text-align:center}
+.result-big{font-size:42px;font-weight:800;color:var(--teal)}
+.result-sub{color:#6f6a5e;font-size:14px;margin:6px 0 14px}
+.pbar{height:10px;background:#eee9dd;border-radius:999px;overflow:hidden;margin:8px 0}
+.pbar>div{height:100%;background:var(--teal)}
+.prog-row{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin-bottom:10px}
+.prog-row h4{font-size:14px;margin-bottom:6px}
+.prog-row small{color:#6f6a5e}
+.muted{color:#8a8477;font-size:13px;text-align:center;margin-top:20px;line-height:1.5}
+.about p{font-size:14px;line-height:1.6;margin-bottom:10px}
+.about h3{margin:14px 0 6px;color:var(--teal-dark);font-size:15px}
+
+table.ttable{border-collapse:collapse;margin:10px auto;font-family:var(--mono);font-size:13px}
+table.ttable th,table.ttable td{border:1px solid #9aa8a8;padding:5px 12px;text-align:center;min-width:46px}
+table.ttable th{background:var(--mint);font-weight:700}
+
+@media (min-width:640px){.qtext{font-size:16px}}
+@media (prefers-reduced-motion:no-preference){
+  .qpaper{animation:pop .18s ease-out}
+  @keyframes pop{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+}
