@@ -1,0 +1,13 @@
+{
+  "name": "Edexcel iGCSE Computer Science Exam Trainer",
+  "short_name": "iGCSE CS",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#fbfaf7",
+  "theme_color": "#007a87",
+  "description": "Revision notes and 200 predicted Edexcel 4CP0 exam questions per section.",
+  "icons": [
+    {"src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png"},
+    {"src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png"}
+  ]
+}
